@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>forms</title>
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <section class="container">
+            <div class="form-navigator">
+                <div id='navItemOne' class='navigator-item navigator-item__active'>01 CUSTOMER INFO</div>
+                <div id='navItemTwo' class='navigator-item'>02 SHIPPING INFO</div>
+                <div id='navItemThree' class='navigator-item'>03 PAYMENT SELECTION</div>
+            </div>
+
+            <form class="form" name='info' action="">
+                <h3 class='form-title'>
+                    Customer information
+                </h3>
+                <label class="label" for='firstName'>FIRST NAME
+                    <input class='input' type="text" id="firstName" onchange='validateName()'>
+                </label>
+                <label class="label" for='secondName'>SECOND NAME
+                    <input class='input' type="text" id="secondName">
+                </label>
+                <label class="label label-long" for='adress'>ADDRESS
+                    <input class='input' type="text" id="adress">
+                </label>
+                <label class="label" for='country'>COUNTRY
+                    <select required class='input input-select' id="country">
+                        <option value="" class='palseholder' selected value="Select your Country">Select your Country</option>
+                        <option value="">Castle</option>
+                        <option value="">Rampart</option>
+                        <option value="">Dungeon</option>
+                        <option value="">Ithaca</option>
+                        <option value="">Necropolis</option>
+                    </select>
+                </label>
+                <label class="label" for='city'>CITY
+                    <input class='input' type="text" id="city">
+                </label>
+                <label class="label" for='code'>
+                    <span class='code-text'>POSTAL CODE</span>
+                    <input class='input code-input' type="text" id="code">
+                    <button type="button" class="input code-button">FIND</button>
+                </label>
+                <label class="label" for='phone'>PHONE
+                    <input class='input input-phone' type="text" id="phone" value="+3 8(0__)___-__-__"  onchange='isChangedPhone()' onkeyup='validatePhone()'>
+                </label > 
+                <button type="button" class='button-simple'>Return to shop</button>
+                <button type="button" id='stepTwo' class='button-primary' disabled>CONTINUE TO SHIPPING</button>
+            </form>
+            <div class='mapBlock'>
+                <h3 class='form-title'>
+                    Shipping information
+                </h3>                
+                <div class='shipping-info'>
+                    <div class='shipping-adress'>
+                        <span class='adress-text'>Taras Shevchenko</span>
+                        <span class='adress-text'>Unit 2 Green Mount Park</span>
+                        <span class='adress-text'>Halifax</span>
+                        <span class='adress-text'>HX1 5QN</span>
+                        <span class='adress-text'>Phone: +3 8097 132-45-67</span>
+                        <div class='shipping-adress-buttons'>
+                            <button class='adress-button'>Edit Address</button>
+                            <button class='adress-button'>Add New</button>
+                        </div>
+                    </div>
+                    <div class='map-wrapper'>
+                        <div id="googleMap" style="width:100%;height:300px">maps</div>
+                    </div>
+                </div>
+                <h3 class='form-title'>
+                    Shipping Method
+                </h3>
+                <div class='shipping-method'>
+                    <label class="shipping-method-item" for='free'>
+                        <input class="shipping-method-input" type='radio' name='shipping' id='free' checked>
+                        <span class='shipping-method-text'>
+                            Standart Delivery
+                        </span>
+                        <strong class='shipping-method-text'>
+                            Free
+                        </strong>
+                        <span class='shipping-method-text'>
+                            Freebie checksout form of the third
+                            step in sketchapp. Feel free to
+                            download anu user it for your project
+                        </span>
+                    </label>
+                    <label class="shipping-method-item" for='bablo'>
+                        <input class="shipping-method-input" type='radio' name='shipping' id='bablo'>
+                        <span class='shipping-method-text'>
+                            Fast Delivery
+                        </span>
+                        <span class='shipping-method-text'>
+                            8.00 uah
+                        </span>
+                        <span class='shipping-method-text'>
+                            Freebie checksout form of the third
+                            step in sketchapp. Feel free to
+                            download anu user it for your project
+                        </span>
+                    </label>
+                </div>
+                <button id='stepOne' class='button-simple'>Back to Customer Info</button> 
+                <button class='button-primary'>CONTINUE TO PAYMENT</button>
+            </div>
+            <div></div>
+
+        </section>
+        <script src="./script.js" ></script>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LrxEcLg7aQh0mvpm35n1abjBplR4M8M&callback=myMap"></script>
+    </body>
+</html>
